@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
 
 function App() {
+
+const [valor,setValor] = useState("");
+
+const texto = () =>{
+  setValor("Este es el texto a mostrar")
+}
+
+
+const borrar = () =>{
+  setValor("");
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Boton</h1>
+      <h2>{valor}</h2>
+      <button onClick={texto}>Mostrar texto</button>
+      <button onClick={borrar}>Borrar texto</button>
     </div>
   );
 }
